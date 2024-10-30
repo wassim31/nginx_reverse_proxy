@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  webapp1:
+    build:
+      context: ./webapp1
+    networks:
+      - webapp-network
+    ports:
+      - "5000:80"
+
+  webapp2:
+    build:
+      context: ./webapp2
+    networks:
+      - webapp-network
+    ports:
+      - "5001:80"
+
+  nginx-proxy:
+    build:
+      context: ./nginx
+    container_name: reverse_proxy
+    ports:
+      - "80:80"
+    networks:
+      - webapp-network
+    depends_on:
+      - webapp1
+      - webapp2
+networks:
+  webapp-network:
+    driver: bridge
