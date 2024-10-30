@@ -2,12 +2,89 @@
 <html lang="en">
 
 <head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .status-card {
+            background: #fff;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .status-card:hover {
+            transform: scale(1.02);
+        }
+
+        .status {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .online {
+            color: #28a745;
+            /* Green */
+        }
+
+        .offline {
+            color: #dc3545;
+            /* Red */
+        }
+
+        .load {
+            font-weight: normal;
+            font-size: 1em;
+        }
+
+        /* Main Server Styles */
+        .main-container {
+            background-color: #e3f2fd;
+            /* Light Blue */
+            border: 2px solid #2196f3;
+            /* Blue */
+        }
+
+        /* Backup Server Styles */
+        .backup-container {
+            background-color: #ffe0b2;
+            /* Light Orange */
+            border: 2px solid #ff9800;
+            /* Orange */
+        }
+    </style>
     <meta charset="UTF-8">
-    <title>Web App 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Server Status</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Welcome to Web App 2 - backup</h1>
+    <div class="container backup-container">
+        <h1>Backup Server</h1>
+        <div class="status-card">
+            <p>Address: <strong>http://backup.server.local:5001</strong></p>
+            <p>Load: <span class="load">N/A</span></p>
+        </div>
+    </div>
 </body>
 
 </html>
